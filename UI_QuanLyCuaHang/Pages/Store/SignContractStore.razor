@@ -1,0 +1,74 @@
+﻿@page "/store/sign-contract-store"
+@using UI_QuanLyCuaHang.Pages.Store.Share_Store
+@inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService _localStorageService
+@inject IHopDongService hopdongservice
+@using Syncfusion.Blazor.PdfViewerServer
+@using Syncfusion.Blazor.PdfViewer;
+
+<div class="wrapper">
+    <div class="container sign-contract">
+        <div class="sign-contract__title">Vui lòng đọc kỹ điều khoản và điều kiện</div>
+        <div class="sign-contract__body">
+            <div class="sign-contract__body--policy">
+                <div class="control-section">
+                    <SfPdfViewerServer @ref="viewer" DocumentPath="@DocumentPath" Height="450px" Width="100%" ToolbarSettings="@ToolbarSettings">
+                    </SfPdfViewerServer>
+                </div>
+            </div>
+            <p class="sign-contract__body--agree-checkbox">
+                <label class="checkbox">
+                    <span class="checkbox__wrapper">
+                        <i class="checkbox__icon icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <rect x="0.5" y="0.5" width="15" height="15" rx="1.5" fill="#EE4D2D" stroke="#EE4D2D"></rect>
+                                <path d="M3.913 7.035h0a.525.525 0 01.412.2l-.412-.2zm0 0h-.82a.243.243 0 00-.19.394h0l3.21 4.067h0c.21.266.613.265.824 0h0l5.723-7.252s0 0 0 0a.243.243 0 00-.191-.394h-.82a.523.523 0 00-.411.2s0 0 0 0l-4.714 5.972m-2.61-2.987l2.61 2.987m0 0L4.325 7.235l2.199 2.787z" fill="#fff" stroke="#fff" stroke-width="0.3"></path>
+                            </svg>
+                        </i>
+                    </span>
+                    <span class="checkbox__text"></span>
+                </label>&nbsp;
+                <span>
+                    <span>Tôi xin xác nhận rằng tôi đã đọc tất cả điều khoản và điều kiện nêu trên và đồng ý ký hợp đồng với ShopeeFood với các mức phí để trở thành đối tác chính thức của ShopeeFood:<br></span>
+                    <span>
+                        - Phí hoa hồng 25%: Với mỗi đơn hàng phát sinh, ShopeeFood thu 25% phí hoa hồng và thanh toán cho Quý Đối Tác khoản còn lại.<br>
+                    </span>- Trong vòng 30 ngày, kể từ ngày Quán đăng ký trên hệ thống thành công, Quý Đối tác cần ký hợp đồng chính thức nhằm hoàn tất thủ tục đăng ký quán mới. Nếu quá thời hạn trên, Quán sẽ bị ngừng hoạt động trên hệ thống.
+                </span>
+            </p>
+        </div>
+        <div class="sign-contract__footer">
+            <button class="btn" type="button">
+                <span class="btn__text" @onclick="(()=>CategoryStore_Fun())">Quay lại</span>
+            </button>
+            <button class="btn btn--primary btn--disabled" type="button">
+                <span class="btn__text" @onclick="(()=>RegisterStoreBasicInfo())">Đồng ý</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string DocumentPath { get; set; } = "wwwroot/contract_bi.pdf";
+    SfPdfViewerServer viewer;
+    public void DocumentLoad(LoadEventArgs args) {
+        viewer.SetAnnotationMode(AnnotationType.HandWrittenSignature);
+    }
+
+
+    public PdfViewerToolbarSettings ToolbarSettings = new PdfViewerToolbarSettings() {
+        ToolbarItems = new List<ToolbarItem>()
+{
+                ToolbarItem.PageNavigationTool,
+                ToolbarItem.MagnificationTool,
+                ToolbarItem.CommentTool,
+                ToolbarItem.SelectionTool,
+                ToolbarItem.PanTool,
+                ToolbarItem.UndoRedoTool,
+                ToolbarItem.CommentTool,
+                ToolbarItem.DownloadOption,
+                ToolbarItem.PrintOption,
+                ToolbarItem.SearchOption,
+                ToolbarItem.AnnotationEditTool
+            }
+    };
+}

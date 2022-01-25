@@ -1,0 +1,296 @@
+﻿@page "/store/register-store-basic-info"
+
+<div class="wrapper">
+    <div class="container register-shop">
+        <div class="register-shop__title">Tiến độ đăng ký</div>
+        <div class="progress-bar__step-group">
+            <div class="progress-bar__step progress-bar__step--active">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i>
+                <i class="progress-bar__step__icon pending-icon icon icon--active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z" fill="#EE4D2D"></path>
+                        <path d="M13.053 17H11.78V8.571l-2.55.937V8.359L12.854 7h.199V17z" fill="#fff"></path>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Thông tin quán - Cơ bản</div>
+            </div>
+            <div class="progress-bar__step progress-bar__step--notReach">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i>
+                <i class="progress-bar__step__icon pending-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M15.418 17H8.896v-.91l3.446-3.827c.51-.58.861-1.049 1.053-1.409.196-.364.293-.74.293-1.127 0-.52-.157-.946-.471-1.279-.315-.332-.734-.499-1.258-.499-.629 0-1.119.18-1.47.54-.346.356-.52.852-.52 1.49H8.706c0-.916.294-1.656.882-2.221.592-.565 1.383-.848 2.372-.848.925 0 1.657.244 2.194.732.538.483.807 1.128.807 1.934 0 .98-.624 2.147-1.873 3.5l-2.666 2.892h4.997V17z" fill="#BFBFBF"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#D9D9D9"></rect>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Thông tin người đại diện</div>
+            </div>
+            <div class="progress-bar__step progress-bar__step--notReach">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i>
+                <i class="progress-bar__step__icon pending-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M10.735 11.408h.95c.598-.009 1.067-.166 1.409-.471.341-.306.512-.718.512-1.238 0-1.166-.58-1.75-1.743-1.75-.547 0-.984.157-1.312.472-.324.31-.486.722-.486 1.237H8.801c0-.788.287-1.442.861-1.962.579-.524 1.313-.786 2.201-.786.94 0 1.675.249 2.208.745.534.497.8 1.187.8 2.072 0 .432-.141.852-.424 1.257a2.518 2.518 0 01-1.141.91c.546.173.968.46 1.264.86.301.402.451.892.451 1.47 0 .894-.291 1.602-.875 2.127-.583.524-1.342.786-2.276.786-.934 0-1.695-.253-2.283-.76-.583-.505-.875-1.173-.875-2.002h1.271c0 .524.171.943.513 1.258.342.314.8.472 1.374.472.61 0 1.078-.16 1.402-.479.323-.319.485-.777.485-1.374 0-.579-.178-1.023-.533-1.333-.356-.31-.869-.47-1.539-.479h-.95v-1.032z" fill="#BFBFBF"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#D9D9D9"></rect>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Thông tin quán - Chi Tiết</div>
+            </div>
+            <div class="progress-bar__step progress-bar__step--notReach">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i><i class="progress-bar__step__icon pending-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M14.235 13.657h1.381v1.033h-1.38V17h-1.272v-2.31H8.432v-.746l4.457-6.897h1.346v6.61zm-4.368 0h3.097v-4.88l-.15.273-2.947 4.607z" fill="#BFBFBF"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#D9D9D9"></rect>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Menu giao hàng - Ảnh chụp menu</div>
+            </div>
+            <div class="progress-bar__step progress-bar__step--notReach">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i>
+                <i class="progress-bar__step__icon pending-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M9.478 12.01l.505-4.963h5.1v1.169h-4.026l-.301 2.714c.487-.287 1.041-.431 1.661-.431.907 0 1.627.3 2.16.902.533.597.8 1.406.8 2.427 0 1.026-.278 1.834-.834 2.427-.551.588-1.324.882-2.317.882-.88 0-1.598-.244-2.154-.732-.556-.487-.872-1.162-.95-2.023h1.196c.078.57.28 1 .609 1.292.328.287.76.43 1.299.43.587 0 1.048-.2 1.38-.601.338-.401.506-.955.506-1.661 0-.666-.182-1.199-.547-1.6-.36-.405-.84-.608-1.442-.608-.551 0-.984.12-1.299.362l-.335.274-1.011-.26z" fill="#BFBFBF"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#D9D9D9"></rect>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Đăng ký Ứng dụng ShopeeFood Merchant</div>
+            </div>
+            <div class="progress-bar__step progress-bar__step--notReach">
+                <i class="progress-bar__step__icon active-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M16.687 8.227h-.819a.373.373 0 00-.294.143l-4.832 6.12-2.317-2.935a.376.376 0 00-.294-.143h-.819a.094.094 0 00-.074.15l3.21 4.067c.15.19.438.19.59 0l5.723-7.252a.093.093 0 00-.074-.15z" fill="#EE4D2D"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#EE4D2D"></rect>
+                    </svg>
+                </i>
+                <i class="progress-bar__step__icon pending-icon icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#fff"></rect>
+                        <path d="M13.86 7.04v1.073h-.233c-.984.019-1.768.31-2.352.875-.583.565-.92 1.36-1.011 2.386.524-.601 1.24-.902 2.146-.902.866 0 1.556.305 2.071.916.52.61.78 1.399.78 2.365 0 1.025-.28 1.846-.841 2.46-.556.616-1.303.924-2.242.924-.953 0-1.725-.365-2.318-1.094-.592-.734-.888-1.677-.888-2.83v-.486c0-1.832.39-3.23 1.169-4.197.784-.97 1.948-1.467 3.493-1.49h.225zm-1.662 4.484c-.433 0-.832.13-1.196.39a2.03 2.03 0 00-.759.978v.464c0 .82.185 1.482.554 1.983.369.501.83.752 1.38.752.57 0 1.017-.21 1.34-.63.329-.418.493-.968.493-1.646 0-.684-.167-1.236-.5-1.655-.327-.424-.765-.636-1.312-.636z" fill="#BFBFBF"></path>
+                        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#D9D9D9"></rect>
+                    </svg>
+                </i>
+                <div class="progress-bar__step__label">Đăng ký ví ShopeeFood Merchant Wallet</div>
+            </div>
+        </div>
+        <form class="register-shop__form-container">
+            <div class="register-shop__form-title">Thông tin cơ bản</div>
+            <div class="register-shop__form-body">
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <span class="form-item__label--important">&nbsp;*</span>
+                        <div class="form-item__label--content">Tên quán</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="row register-shop__form-body--name-item">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="input input--full-width">
+                                    <input placeholder="Tên" value="">
+                                </div>
+                            </div>
+                        </div>
+                        @*<br>
+                        <div class="notice-container">
+                            <i class="notice-container__icon icon">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1a7 7 0 10.001 14.001A7 7 0 008 1zm-.5 3.625c0-.069.056-.125.125-.125h.75c.069 0 .125.056.125.125v4.25A.125.125 0 018.375 9h-.75a.125.125 0 01-.125-.125v-4.25zM8 11.5A.75.75 0 018 10a.75.75 0 010 1.5z" fill="#FAAD14"></path>
+                                </svg>
+                            </i>
+                            <div class="notice-container__text">
+                                <span>Tên quán nên được đặt theo thứ tự: Tên quán, món đặc trưng của quán và tên đường</span>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <span class="form-item__label--important">&nbsp;*</span>
+                        <div class="form-item__label--content">Số điện thoại liên hệ</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="input">
+                            <input placeholder="Số điện thoại"  value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <span class="form-item__label--important">&nbsp;*</span>
+                        <div class="form-item__label--content">Thành phố</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="rc-select select rc-select-single rc-select-show-arrow rc-select-disabled rc-select-show-search" name="cityId">
+                            <div class="rc-select-selector">
+                                <span class="rc-select-selection-search">
+                                    <input disabled="" autocomplete="off" type="search" class="rc-select-selection-search-input" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="rc_select_26_list" aria-autocomplete="list" placeholder="TP. HCM" aria-controls="rc_select_26_list" aria-activedescendant="rc_select_26_list_0" value="" id="rc_select_26">
+                                </span>
+                                <span class="rc-select-selection-item" title="TP. HCM"></span>
+                            </div>
+                            <span class="rc-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
+                                <i class="icon">
+                                    <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content">Quận</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="rc-select select rc-select-single rc-select-show-arrow rc-select-open rc-select-show-search" name="districtId">
+                            <div class="rc-select-selector">
+                                <span class="rc-select-selection-search">
+                                    <input autocomplete="off" type="search" class="rc-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_27_list" aria-autocomplete="list" aria-controls="rc_select_27_list" placeholder="Quận 1" aria-expanded="true" aria-activedescendant="rc_select_27_list_0" value="" id="rc_select_27">
+                                </span>
+                                <span class="rc-select-selection-item" title="Quận 1"></span>
+                            </div>
+                            <span class="rc-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
+                                <i class="icon">
+                                    <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content">Phường</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="rc-select select rc-select-single rc-select-show-arrow rc-select-show-search" name="wardId">
+                            <div class="rc-select-selector">
+                                <span class="rc-select-selection-search">
+                                    <input autocomplete="off" type="search" class="rc-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_28_list" aria-autocomplete="list" aria-controls="rc_select_28_list" placeholder="Phường" aria-activedescendant="rc_select_28_list_0" value="" id="rc_select_28">
+                                </span>
+                                <span class="rc-select-selection-item" title="Phường Phạm Ngũ Lão"></span>
+                            </div>
+                            <span class="rc-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
+                                <i class="icon">
+                                    <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content">Đường/phố</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="rc-select select rc-select-single rc-select-show-arrow rc-select-show-search" name="streetId">
+                            <div class="rc-select-selector">
+                                <span class="rc-select-selection-search">
+                                    <input autocomplete="off" type="search" class="rc-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_29_list" aria-autocomplete="list" aria-controls="rc_select_29_list" placeholder="Nguyễn Đình Chiểu" aria-activedescendant="rc_select_29_list_0" value="" id="rc_select_29">
+                                </span>
+                                <span class="rc-select-selection-item" title="Nguyễn Đình Chiểu"></span>
+                            </div>
+                            <span class="rc-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
+                                <i class="icon">
+                                    <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                        <path d="M12.246 4.103a.604.604 0 01-.131.374l-4.661 5.794a.598.598 0 01-.931 0l-4.636-5.77a.597.597 0 01.93-.747l4.172 5.19 4.195-5.216a.597.597 0 011.062.375z" fill="#000" fill-opacity="0.25"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content">Số nhà và Đường/Phố</div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="input input--full-width">
+                            <input placeholder="Đường/phố" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content"></div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        <button class="btn btn--primary btn--disabled" type="button">
+                            <span class="btn__text">Kiểm tra trên bản đồ</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row form-item">
+                    <div class="col-xs-3 form-item__label">
+                        <div class="form-item__label--content">
+                            Định vị trên bản đồ
+                            <p class="form-item__sub-label">(Theo như địa chỉ ghi trên)</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 form-item__control-wrapper undefined">
+                        
+                    </div>
+                </div><div class="row form-item">
+                    <div class="col-xs-3 form-item__label"><div class="form-item__label--content">Ghi chú địa chỉ</div></div><div class="col-xs-9 form-item__control-wrapper undefined">
+                        <div class="input input--full-width">
+                            <input placeholder="Ghi chú địa chỉ" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register-shop__form-footer">
+                <button class="btn" type="button">
+                    <span class="btn__text">Quay lại</span>
+                </button>
+                <button class="btn btn--primary" type="submit">
+                    <span class="btn__text">Lưu và Tiếp tục</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@code {
+
+}

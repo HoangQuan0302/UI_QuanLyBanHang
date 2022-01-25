@@ -1,0 +1,79 @@
+﻿@page  "/"
+@using UI_QuanLyCuaHang.Data
+@using Newtonsoft.Json
+@using UI_QuanLyCuaHang.Services
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService localStorageService
+@inject IUserService userService
+@inject IJSRuntime jsRunTime
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Đi Chợ Thuê</h3>
+            <p>1 Phút 30 Giây!!!</p>
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true" @onclick="(()=>CheckLogin())">Đăng Nhập</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="newuser-tab" data-toggle="tab" href="#newuser" role="tab" aria-controls="newuser" aria-selected="false" @onclick="(()=>CheckRegister())">Đăng Ký</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                @if (checkRegister == false) {
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <h3 class="register-heading">Đăng Nhập</h3>
+                        <div class="row register-form">
+                            <div class="col-md-12 profile_card">
+                                <div class="col-12 row">
+                                    <input class="form-control col-12" @bind="userlogin.username" placeholder="user name *" />
+                                </div>
+                                <br />
+                                <div class="col-12 row">
+                                    <input type="password" class="form-control col-12" @bind="userlogin.password" placeholder="password *" />
+                                </div>
+                                <br />
+                                <div class="col-12 row">
+                                    <span class="col-12"></span>
+                                    <input type="submit" class="form-control col-6 btn btn-primary" value="Đăng nhập" @onclick="(()=>ValidateUser())" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else {
+                    <div class="tab-pane fade show active" id="newuser" role="tabpanel" aria-labelledby="newuser-tab">
+                        <h3 class="register-heading">Đăng Ký</h3>
+                        <div class="row register-form">
+                            <div class="col-md-12 profile_card">
+                                <div class="col-12 row">
+                                    <input class="form-control col-12" @bind="userRegister.username" placeholder="user name *" />
+                                </div>
+                                <br />
+                                <div class="col-12 row">
+                                    <input type="password" class="form-control col-12" @bind="userRegister.password" placeholder="password *" />
+                                </div>
+                                <br />
+                                <div class="col-12 row">
+                                    <input type="email" class="form-control col-12" @bind="userRegister.Email" placeholder="email *" />
+                                </div>
+                                <br />
+                                <div class="col-12 row">
+                                    <span class="col-12"></span>
+                                    <input type="submit" class="form-control col-6 btn btn-primary" value="Đăng ký" @onclick="(()=>RegisterUser())" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

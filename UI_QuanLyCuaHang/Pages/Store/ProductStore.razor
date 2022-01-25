@@ -1,0 +1,43 @@
+﻿@page "/store/product"
+
+<div class="wrapper">
+    <div class="container shop-management">
+        <div class="row flex-container">
+            <div class="col-xs-12 col-md-6 shop-management__title">Quản lý sản phẩm</div>
+        </div>
+        <div class="tab-container shop-management__tab">
+            <button class="btn btn--flat btn--small tab-container__btn-tab @(_dic.GetValueOrDefault(1)?"active":null)" type="button">
+                <span class="btn__text" @onclick="(()=>ActiveMenu(1))">
+                    <span>Sản Phẩm</span>
+                </span>
+            </button>
+            <button class="btn btn--flat btn--small tab-container__btn-tab @(_dic.GetValueOrDefault(2)?"active":null)" type="button">
+                <span class="btn__text" @onclick="(()=>ActiveMenu(2))">
+                    <span>Thêm Mới</span>
+                </span>
+            </button>
+            <button class="btn btn--flat btn--small tab-container__btn-tab @(_dic.GetValueOrDefault(3)?"active":null)" type="button">
+                <span class="btn__text" @onclick="(()=>ActiveMenu(3))">
+                    <span>Thêm hàng loạt</span>
+                </span>
+            </button>
+        </div>
+        <div class="shop-management__shop-list">
+            @if (_dic.GetValueOrDefault(1) == true) {
+                <UI_QuanLyCuaHang.Pages.Store.ProductStoreDetail.ViewProduct />
+            }
+            else if(_dic.GetValueOrDefault(2) == true)
+            {
+                <UI_QuanLyCuaHang.Pages.Store.ProductStoreDetail.CreateProduct/>
+            }
+            else if(_dic.GetValueOrDefault(3) == true) {
+                <UI_QuanLyCuaHang.Pages.Store.ProductStoreDetail.ImportProduct/>
+            }
+
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

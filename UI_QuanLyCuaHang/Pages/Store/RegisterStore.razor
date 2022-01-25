@@ -1,0 +1,116 @@
+﻿@page "/store/register-store"
+@using UI_QuanLyCuaHang.Pages.Store.Share_Store
+@inject NavigationManager navigation
+@inject ICuaHangService cuahangservice
+
+
+<div class="wrapper">
+    <div class="container shop-management">
+        <div class="row flex-container">
+            <div class="col-xs-12 col-md-6 shop-management__title">Đăng Ký Quán</div>
+            <div class="col-xs-12 col-md-6 shop-management__btn-create-shop">
+                <button class="btn" type="button">
+                    <i class="btn__icon icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12.667 8.666h-4v4H7.333v-4h-4V7.333h4v-4h1.334v4h4v1.333z" fill="#fff"></path>
+                        </svg>
+                    </i>
+                    <span class="btn__text" @onclick="(()=>CategoryStore_Fun())">Tạo quán mới</span>
+                </button>
+            </div>
+        </div>
+        @if (_cuahang == null) {
+            <div class="shop-management__empty-list">
+                <i class="shop-management__empty-list__icon icon">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                        <path d="M21.137 56.5v42.432a4.069 4.069 0 004.07 4.069h68.587a4.069 4.069 0 004.068-4.07v-42.43" stroke="#F69113" stroke-width="4.069"></path>
+                        <path d="M56.23 68.884A7.056 7.056 0 0159.655 68c.666 0 1.293.083 1.898.257s1.15.4 1.64.695c.961.589 1.672 1.352 2.156 2.281.476.937.74 1.911.771 2.923.03.869-.09 1.723-.363 2.546-.393 1.186-1.187 2.19-2.117 3.029-.56.499-.983 1.005-1.278 1.503-.333.567-.567 1.073-.703 1.526-.136.446-.19.952-.166 1.518a.045.045 0 01-.046.046h-4.12c0-.053.014-.287.037-.718.023-.43.136-.982.333-1.654.196-.672.521-1.428.975-2.259.454-.83 1.112-1.67 1.974-2.5.514-.491.884-.974 1.104-1.45.219-.476.34-.922.347-1.322a2.087 2.087 0 00-.257-1.103 2.21 2.21 0 00-.718-.793 2.581 2.581 0 00-1.474-.438c-.643 0-1.225.241-1.747.732-.522.484-.771 1.24-.756 2.274 0 .023-.015.045-.038.045l-4.008.106c-.022 0-.045-.015-.045-.038a5.896 5.896 0 01.076-2.04 6.69 6.69 0 01.665-1.782 6.076 6.076 0 011.089-1.45 6.56 6.56 0 011.346-1.05zm.733 19.904c0-.733.227-1.337.68-1.805.454-.469 1.052-.703 1.785-.703.734 0 1.331.234 1.785.703.453.468.68 1.065.68 1.805 0 .733-.227 1.322-.68 1.768-.454.438-1.051.664-1.785.664-.733 0-1.33-.219-1.784-.664-.454-.446-.68-1.035-.68-1.768z" fill="#EE4D2B"></path>
+                        <path d="M21.137 26.276l1.555-6.218a4.069 4.069 0 013.947-3.082h65.722a4.069 4.069 0 013.947 3.082l1.554 6.218" stroke="#F69113" stroke-width="4.069"></path>
+                        <path d="M106 41.388l-4.666-12.132a4.65 4.65 0 00-4.34-2.98H22.006a4.65 4.65 0 00-4.34 2.98L13 41.388" stroke="#EE4D2D" stroke-width="4.069" stroke-linecap="round"></path>
+                        <path d="M13 42.55c0-.642.52-1.162 1.162-1.162H31.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-5.812zm18.6-1.162h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975zm18.6 0h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975z" stroke="#EE4D2D" stroke-width="4.069"></path>
+                        <path d="M68.8 41.388h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975zm18.6 0h17.437c.642 0 1.163.52 1.163 1.163v5.812a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975z" stroke="#EE4D2D" stroke-width="4.069"></path>
+                    </svg>
+                </i>
+                <div class="shop-management__empty-list__text">Không có quán nào</div>
+                <button class="btn" type="button">
+                    <span class="btn__text">Tạo quán mới</span>
+                </button>
+            </div>
+        }
+        else {
+            <div class="tab-container shop-management__tab">
+                <button class="btn btn--flat btn--small tab-container__btn-tab active" type="button">
+                    <span class="btn__text">
+                        <span>Quán của tôi</span>
+                    </span>
+                </button>
+                <button class="btn btn--flat btn--small tab-container__btn-tab" type="button">
+                    <span class="btn__text">
+                        <span>Quán đợi duyệt</span>
+                    </span>
+                </button>
+            </div>
+            <div class="shop-management__shop-list">
+                @if (_cuahang.TrangThaiKichHoat == true) {
+                <div class="shop-management__empty-list">
+                    <i class="shop-management__empty-list__icon icon">
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <path d="M21.137 56.5v42.432a4.069 4.069 0 004.07 4.069h68.587a4.069 4.069 0 004.068-4.07v-42.43" stroke="#F69113" stroke-width="4.069"></path>
+                            <path d="M56.23 68.884A7.056 7.056 0 0159.655 68c.666 0 1.293.083 1.898.257s1.15.4 1.64.695c.961.589 1.672 1.352 2.156 2.281.476.937.74 1.911.771 2.923.03.869-.09 1.723-.363 2.546-.393 1.186-1.187 2.19-2.117 3.029-.56.499-.983 1.005-1.278 1.503-.333.567-.567 1.073-.703 1.526-.136.446-.19.952-.166 1.518a.045.045 0 01-.046.046h-4.12c0-.053.014-.287.037-.718.023-.43.136-.982.333-1.654.196-.672.521-1.428.975-2.259.454-.83 1.112-1.67 1.974-2.5.514-.491.884-.974 1.104-1.45.219-.476.34-.922.347-1.322a2.087 2.087 0 00-.257-1.103 2.21 2.21 0 00-.718-.793 2.581 2.581 0 00-1.474-.438c-.643 0-1.225.241-1.747.732-.522.484-.771 1.24-.756 2.274 0 .023-.015.045-.038.045l-4.008.106c-.022 0-.045-.015-.045-.038a5.896 5.896 0 01.076-2.04 6.69 6.69 0 01.665-1.782 6.076 6.076 0 011.089-1.45 6.56 6.56 0 011.346-1.05zm.733 19.904c0-.733.227-1.337.68-1.805.454-.469 1.052-.703 1.785-.703.734 0 1.331.234 1.785.703.453.468.68 1.065.68 1.805 0 .733-.227 1.322-.68 1.768-.454.438-1.051.664-1.785.664-.733 0-1.33-.219-1.784-.664-.454-.446-.68-1.035-.68-1.768z" fill="#EE4D2B"></path>
+                            <path d="M21.137 26.276l1.555-6.218a4.069 4.069 0 013.947-3.082h65.722a4.069 4.069 0 013.947 3.082l1.554 6.218" stroke="#F69113" stroke-width="4.069"></path>
+                            <path d="M106 41.388l-4.666-12.132a4.65 4.65 0 00-4.34-2.98H22.006a4.65 4.65 0 00-4.34 2.98L13 41.388" stroke="#EE4D2D" stroke-width="4.069" stroke-linecap="round">
+                            </path>
+                            <path d="M13 42.55c0-.642.52-1.162 1.162-1.162H31.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-5.812zm18.6-1.162h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975zm18.6 0h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975z" stroke="#EE4D2D" stroke-width="4.069"></path>
+                            <path d="M68.8 41.388h18.6v6.975a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975zm18.6 0h17.437c.642 0 1.163.52 1.163 1.163v5.812a9.3 9.3 0 01-9.3 9.3v0a9.3 9.3 0 01-9.3-9.3v-6.975z" stroke="#EE4D2D" stroke-width="4.069"></path>
+                        </svg>
+                    </i>
+                    <div class="shop-management__empty-list__text">Không có quán nào</div>
+                </div>
+                }
+                else {
+                <div class="card-shop card-shop--registering">
+                    <img src="https://s3.prod.now.vn/nowmerchant-onboard/20220121/file_755b0833-9ad9-4b2e-8041-b21609a59415.jpeg" alt="" class="card-shop__photo">
+                    <div class="card-shop__body">
+                        <div class="card-shop__name">
+                            <i class="card-shop__name__icon icon">
+                                <svg width="20" height="20" viewBox="1.5 1.5 17.5 17.5" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.043 1.667H3.957a2.29 2.29 0 00-2.29 2.29v12.086a2.29 2.29 0 002.29 2.29h12.086a2.29 2.29 0 002.29-2.29V3.957a2.29 2.29 0 00-2.29-2.29z" fill="#F13233"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.556 9.86S5 10.055 5 8.107c0-1.947 2.529-3.31 4.474-3.31 1.945 0 5.64.584 6.03 0 .388-.585-.195 1.363-1.168 1.557-.972.195-3.695-.39-3.695-.39l-.778 3.311h2.334l-.195.78H9.668l-1.167 5.258h-1.75L8.89 5.77s-2.14 0-2.53 1.753c-.388 1.752.195 2.337.195 2.337z" fill="#fff"></path>
+                                </svg>
+                            </i>
+                            <i class="card-shop__name__icon icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M19.192 3.965c0-.09-.03-.174-.08-.242h.002S16.965.477 16.853.286C16.74.095 16.7 0 16.514 0H2.727c-.186 0-.226.095-.34.286C2.288.456.62 2.927.242 3.499c0 0-.241.31-.241.467v.032l.634 14.025.01.176c.096.976.804 1.762 1.766 1.798L16.563 20h.07c.98-.028 1.774-.824 1.858-1.812l.006-.12.694-14.08v-.023zM13.7 3.953H5.49V2.16a.52.52 0 01.519-.522h7.172a.52.52 0 01.52.522v1.793H13.7z" fill="#EE4D2D"></path>
+                                    <path d="M14.151 15.883v-1.129c0-1.015.43-1.38.43-1.38.734-.638 1.216-1.72 1.216-2.946 0-1.963-1.234-3.769-2.758-3.769s-2.759 1.806-2.759 3.769c0 1.226.482 2.308 1.216 2.947 0 0 .504.364.504 1.38v5.244h2.15v-4.116h.001zM7.286 15.882v-.427c0-1.211.074-1.253.668-1.85.592-.598.592-1.079.592-1.079V7.33a.416.416 0 00-.414-.418h-.699v4.337a.374.374 0 01-.372.375.374.374 0 01-.372-.375V6.911h-.956v4.337a.374.374 0 01-.372.375.374.374 0 01-.372-.375V6.911h-.694a.42.42 0 00-.419.422v5.193s0 .48.593 1.078c.593.597.667.64.667 1.85v4.544h2.15v-4.116z" fill="#fff"></path>
+                                </svg>
+                            </i>
+                            <span class="card-shop__name__text">adsa - sadsa - sdsa</span>
+                        </div>
+                        <div class="card-shop__info">
+                            <div class="card-shop__info__progress-container card-shop__info__progress-proceed">
+                                <div class="card-shop__info__progress-bar progress">
+                                    <div class="progress__inner" style="width: 80%;"></div>
+                                </div>
+                                <span class="card-shop__info__progress-text">80% Hoàn thành</span>
+                            </div>
+                            <span class="card-shop__info__extra">22/01/2022 Đã cập nhật</span>
+                        </div>
+                        <div class="card-shop__btn-group">
+                            <button class="btn btn--flat btn--small" type="button">
+                                <span class="btn__text">Tiếp tục đăng ký</span>
+                            </button>
+                            <button class="btn btn--small" type="button">
+                                <span class="btn__text">Huỷ đăng ký</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+
+}

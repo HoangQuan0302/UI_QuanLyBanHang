@@ -1,0 +1,44 @@
+﻿@inject IJSRuntime JSRuntime
+
+<div class="sidebar">
+    <div class="logo_content">
+        <div class="logo">
+            <div class="logo_name">DiChoThue</div>
+        </div>
+        <i class='bx bx-menu' id="btn" @onclick="(()=>ShowMenu())"></i>
+    </div>
+    <ul class="nav_list">
+        <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search..." />
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bxs-dashboard'></i>
+                <span class="link_name">Trang chủ</span>
+            </a>
+            <span class="tooltip">Trang chủ</span>
+        </li>
+        <li>
+            <a href="Quanlysanpham">
+                <i class='bx bxs-dashboard'></i>
+                <span class="link_name">Quản lý sản phẩm</span>
+            </a>
+            <span class="tooltip">Quản lý sản phẩm</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bxs-dashboard'></i>
+                <span class="link_name">Thống kê</span>
+            </a>
+            <span class="tooltip">Thống kê</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bxs-dashboard'></i>
+                <span class="link_name">Đơn Hàng</span>
+            </a>
+            <span class="tooltip">Đơn Hàng</span>
+        </li>
+    </ul>
+</div>

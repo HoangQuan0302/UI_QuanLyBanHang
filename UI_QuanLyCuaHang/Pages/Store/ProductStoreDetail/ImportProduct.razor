@@ -1,0 +1,30 @@
+﻿@inject NavigationManager navigation
+@inject ISanPhamService sanphamservice
+
+
+<DxDataGrid Data="@_listsanpham" ShowPager="true" ShowGroupPanel="true" ColumnResizeMode="@CurrentMode"
+            PagerNavigationMode="PagerNavigationMode.InputBox"
+            PagerPageSizeSelectorVisible="true"
+            PagerAllDataRowsItemVisible="true"
+            PagerAllowedPageSizes=@(new int[] {2,10,20,40})
+            ShowFilterRow="@ShowFilterRow"
+            HorizontalScrollBarMode="ScrollBarMode.Visible"
+            VerticalScrollBarMode="ScrollBarMode.Auto"
+            VerticalScrollableHeight="600">
+    <HeaderTemplate>
+        <DxToolbar>
+            <DxToolbarItem Text="Show Filter Row" GroupName="FilterRow" Click="@OnShowFilterRow" CssClass="toolbaritem-filter" IconCssClass="bx bx-filter-alt" />
+            <DxDataGridColumnChooserToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Right" />
+        </DxToolbar>
+    </HeaderTemplate>
+    <Columns>
+        <DxDataGridColumn Field="@nameof(SanPham.Ten)" Caption="Tên Sản Phẩm" AllowSort="false" Width="150px" SortIndex="0" SortOrder="DataGridColumnSortOrder.Ascending" />
+        <DxDataGridColumn Field="@nameof(SanPham.GiaSp)" Caption="Đơn Giá" Width="200px" />
+        <DxDataGridColumn Field="@nameof(SanPham.SoLuong)" Caption="Số Lượng" Width="200px" />
+        <DxDataGridColumn Field="@nameof(SanPham.MoTa)" Caption="Mô Tả" Width="500px" />
+    </Columns>
+</DxDataGrid>
+
+@code {
+
+}
